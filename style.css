@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -7,11 +10,16 @@
 body{
   background-color: #111111;
   color: white;
+  font-family: 'Merriweather', serif;
 }
 
 #heading{
   margin: 59px 15px;
 }
+
+
+
+/* input from section */
 
 #form-section{
   display: flex;
@@ -33,10 +41,31 @@ form input{
   color: white;
 }
 
+
+/* gradient animation */
+form .gradient:focus {
+  outline: none;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#111111, #111111), linear-gradient(315deg, rgb(236, 160, 255), rgb(170, 178, 255), rgb(132, 255, 201));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: bg-hue 2s linear infinite;
+}
+
+@keyframes bg-hue {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+
 #btn input{
   background-color: #fff;
   color: black;
   border: none;
+  font-weight: 900;
 }
 
 
@@ -64,6 +93,24 @@ form input{
     color: white;
     border: 1px solid white;
 }
+
+/* gradient animation */
+#search-bar input:focus {
+  outline: none;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#111111, #111111), linear-gradient(315deg, rgb(236, 160, 255), rgb(170, 178, 255), rgb(132, 255, 201));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: bg-hue 2s linear infinite;
+}
+
+@keyframes bg-hue {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
 
 
 
@@ -97,6 +144,7 @@ table {
       border-collapse: collapse;
       border-spacing: 0 0px;
       border: 1px solid white;
+      font-size: 12px;
       
 }
 
@@ -196,7 +244,9 @@ tbody tr td {
   vertical-align: top;
   border-collapse: separate;
   border-right: 1px solid white;
+  border-bottom: 1px solid white;
   padding: 9px 6px;
+  word-break: break-all;
 }
 
 
