@@ -5,9 +5,48 @@ const studentInputAge = document.getElementById("age");
 const studentInputEmail = document.getElementById("email");
 const studentInputGpa = document.getElementById("gpa");
 const studentInputDegree = document.getElementById("degree");
+const table = document.getElementById("table-body");
+// const editBtn = document.getElementById("edit-btn");
+const trashBtn = document.getElementById("trash-btn");
 let studentDetails = [];
 
 
+
+
+
+// editing from table
+const editBtnHandler = (btnValue) => {
+    const id = btnValue.value;
+    // console.log(id);
+    
+    studentDetails.forEach((val) => {
+        if(val["id"] === id){
+            // console.log(val);
+            row = val;
+        }
+    })
+    console.log(row);
+}
+
+
+
+// adding into table
+const inserIntoTable = () => {
+    let toEnterTable = ""
+    studentDetails.map((val) => {
+    toEnterTable += `
+                <tr>
+                <td>${val['id']}</td>
+                <td>${val['name']}</td>
+                <td>${val["email"]}</td>
+                <td>${val["age"]}</td>
+                <td>${val["gpa"]}</td>
+                <td>${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button id="trash-btn"></button></td>
+            <tr>
+    `
+});
+   table.innerHTML = toEnterTable;
+}
 
 
 
@@ -41,10 +80,11 @@ function formDataHandler(ev){
     studentInputGpa.value = "";
     studentInputDegree.value = "";
     console.log(studentDetails);
+    inserIntoTable();
 }
 
 
 form.addEventListener('submit', formDataHandler);
-
+// editBtn.addEventListener("click", editBtnHandler);
 
 
