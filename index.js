@@ -6,14 +6,49 @@ const studentInputEmail = document.getElementById("email");
 const studentInputGpa = document.getElementById("gpa");
 const studentInputDegree = document.getElementById("degree");
 const table = document.getElementById("table-body");
-// const editBtn = document.getElementById("edit-btn");
 const trashBtn = document.getElementById("trash-btn");
 const editStudentBtn = document.getElementById("edit-student-btn");
 const addStudentBtn = document.getElementById("add-student-btn");
-// const deleteStudentBtn = document.getElementById("trash-btn");
+const search = document.getElementById("search");
 let studentDetails = [];
 let row = {};
 
+
+
+
+// search bar 
+const searchHandler = (ev) => {
+   const curr = ev.target.value.toLowerCase();
+//    console.log(curr);
+   const filteredData = studentDetails.filter((val) => {
+    const stName = val["name"].toLowerCase();
+    const stEmail = val["email"].toLowerCase();
+    const stDegree = val["degree"].toLowerCase();
+     if(stName.includes(curr) || stEmail.includes(curr) || stDegree.includes(curr)){
+        // console.log("from filter fn " ,val);
+        return val;
+     }
+   });
+//    console.log(filteredData);
+   renderSearch(filteredData);
+}
+
+const renderSearch = (filteredData) => {
+    let toEnterTable = ""
+    filteredData.map((val) => {
+    toEnterTable += `
+                <tr>
+                <td>${val['id']}</td>
+                <td>${val['name']}</td>
+                <td>${val["email"]}</td>
+                <td>${val["age"]}</td>
+                <td>${val["gpa"]}</td>
+                <td>${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button onClick="deleteStudentBtnHandler(this)" value=${val['id']} id="trash-btn"></button></td>
+            <tr>
+    `
+});
+   table.innerHTML = toEnterTable;
+}
 
 
 
@@ -68,9 +103,6 @@ const insertIntoTable = () => {
 
 
 
-
-
-
 // edit student btn handler
 
 function editStudentBtnHandler(ev){
@@ -79,6 +111,11 @@ function editStudentBtnHandler(ev){
         alert("please enter valid age!!")
         return;
     }
+    if(row["gpa"] <0 || row["gpa"] > 10){
+        alert("please enter valid gpa!!")
+        return;
+    }
+    
     row['name'] = studentInputName.value;
     row['age'] = studentInputAge.value;
     row["email"] = studentInputEmail.value;
@@ -122,9 +159,6 @@ const deleteStudentBtnHandler = (obj) => {
 
 
 
-
-
-
 // capturing student details
 
 function formDataHandler(ev){
@@ -138,6 +172,11 @@ function formDataHandler(ev){
         alert("please enter valid age!!")
         return;
     }
+    if(studentGpa <0 || studentGpa > 10){
+        alert("please enter valid gpa!!")
+        return;
+    }
+    
     let id = "id" + Math.random().toString(16).slice(2);
 
     const details = {
@@ -161,7 +200,6 @@ function formDataHandler(ev){
 
 form.addEventListener('submit', formDataHandler);
 editStudentBtn.addEventListener('click', editStudentBtnHandler);
-// deleteStudentBtn.addEventListener('click', deleteStudentBtnHandler);
-// editBtn.addEventListener("click", editBtnHandler);
+search.addEventListener('keyup', searchHandler);
 
 
