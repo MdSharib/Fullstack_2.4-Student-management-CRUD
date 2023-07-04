@@ -28,7 +28,7 @@ thead tr th {
   border-right: 1px solid black;
 }
 
-.edit-btn {
+#edit-btn {
     width: 31%;
     height: 15px;
     background-image: url(./resources/edit.png);
@@ -38,7 +38,7 @@ thead tr th {
     border: none;
     cursor: pointer;
 }
-.trash-btn {
+#trash-btn {
     width: 31%;
     height: 15px;
     background-image: url(./resources/trash.png);

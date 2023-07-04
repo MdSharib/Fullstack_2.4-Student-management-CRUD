@@ -10,6 +10,7 @@ const table = document.getElementById("table-body");
 const trashBtn = document.getElementById("trash-btn");
 const editStudentBtn = document.getElementById("edit-student-btn");
 const addStudentBtn = document.getElementById("add-student-btn");
+// const deleteStudentBtn = document.getElementById("trash-btn");
 let studentDetails = [];
 let row = {};
 
@@ -45,7 +46,8 @@ const editForm = () => {
 
 
 // adding into table
-const inserIntoTable = () => {
+
+const insertIntoTable = () => {
     let toEnterTable = ""
     studentDetails.map((val) => {
     toEnterTable += `
@@ -55,14 +57,21 @@ const inserIntoTable = () => {
                 <td>${val["email"]}</td>
                 <td>${val["age"]}</td>
                 <td>${val["gpa"]}</td>
-                <td>${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button id="trash-btn"></button></td>
+                <td>${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button onClick="deleteStudentBtnHandler(this)" value=${val['id']} id="trash-btn"></button></td>
             <tr>
     `
 });
    table.innerHTML = toEnterTable;
 }
 
-// edit student btn
+
+
+
+
+
+
+
+// edit student btn handler
 
 function editStudentBtnHandler(ev){
     ev.preventDefault();
@@ -95,9 +104,21 @@ function editStudentBtnHandler(ev){
     addStudentBtn.style.display = 'flex';
     editStudentBtn.style.display = "none";
     row = {};
-    inserIntoTable();
+    insertIntoTable();
 }
 
+
+// delete student btn handler
+const deleteStudentBtnHandler = (obj) => {
+    const id = obj['value'];
+    const afterDelete = studentDetails.filter((val) => {
+        if(val["id"] !== id){
+            return val;
+        }
+    })
+    studentDetails = afterDelete;
+    insertIntoTable();
+}
 
 
 
@@ -134,12 +155,13 @@ function formDataHandler(ev){
     studentInputGpa.value = "";
     studentInputDegree.value = "";
     console.log("before editing",studentDetails);
-    inserIntoTable();
+    insertIntoTable();
 }
 
 
 form.addEventListener('submit', formDataHandler);
 editStudentBtn.addEventListener('click', editStudentBtnHandler);
+// deleteStudentBtn.addEventListener('click', deleteStudentBtnHandler);
 // editBtn.addEventListener("click", editBtnHandler);
 
 
