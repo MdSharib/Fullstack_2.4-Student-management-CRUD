@@ -3,6 +3,14 @@
   /* overflow-y: auto; */
 }
 
+#edit-student-btn{
+  display: none;
+}
+
+
+
+/* table styling */
+
 table {
   /* background: pink;  */
   width: 40%;

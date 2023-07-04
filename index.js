@@ -8,8 +8,10 @@ const studentInputDegree = document.getElementById("degree");
 const table = document.getElementById("table-body");
 // const editBtn = document.getElementById("edit-btn");
 const trashBtn = document.getElementById("trash-btn");
+const editStudentBtn = document.getElementById("edit-student-btn");
+const addStudentBtn = document.getElementById("add-student-btn");
 let studentDetails = [];
-
+let row = {};
 
 
 
@@ -18,14 +20,26 @@ let studentDetails = [];
 const editBtnHandler = (btnValue) => {
     const id = btnValue.value;
     // console.log(id);
+    addStudentBtn.style.display = 'none';
+    editStudentBtn.style.display = "flex";
     
     studentDetails.forEach((val) => {
         if(val["id"] === id){
             // console.log(val);
             row = val;
         }
-    })
-    console.log(row);
+    });
+
+    editForm();
+    // console.log(row);
+}
+
+const editForm = () => {
+    studentInputName.value = row["name"];
+    studentInputEmail.value = row["email"];
+    studentInputGpa.value = row["gpa"];
+    studentInputAge.value = row["age"];
+    studentInputDegree.value = row["degree"];
 }
 
 
@@ -47,6 +61,46 @@ const inserIntoTable = () => {
 });
    table.innerHTML = toEnterTable;
 }
+
+// edit student btn
+
+function editStudentBtnHandler(ev){
+    ev.preventDefault();
+    if(row["age"] <5 || row["age"] > 100){
+        alert("please enter valid age!!")
+        return;
+    }
+    row['name'] = studentInputName.value;
+    row['age'] = studentInputAge.value;
+    row["email"] = studentInputEmail.value;
+    row["gpa"] = studentInputGpa.value;
+    row["degree"]= studentInputDegree.value;
+    // let id = "id" + Math.random().toString(16).slice(2);
+
+    // const details = {
+    //     id: id,
+    //     name: studentName,
+    //     email: studentEmail,
+    //     gpa: studentGpa,
+    //     age: studentAge,
+    //     degree: studentDegree,
+    // }
+    // studentDetails.push(details);
+    studentInputName.value = "";
+    studentInputAge.value = "";
+    studentInputEmail.value = "";
+    studentInputGpa.value = "";
+    studentInputDegree.value = "";
+    console.log("after editing",studentDetails);
+    addStudentBtn.style.display = 'flex';
+    editStudentBtn.style.display = "none";
+    row = {};
+    inserIntoTable();
+}
+
+
+
+
 
 
 
@@ -79,12 +133,13 @@ function formDataHandler(ev){
     studentInputEmail.value = "";
     studentInputGpa.value = "";
     studentInputDegree.value = "";
-    console.log(studentDetails);
+    console.log("before editing",studentDetails);
     inserIntoTable();
 }
 
 
 form.addEventListener('submit', formDataHandler);
+editStudentBtn.addEventListener('click', editStudentBtnHandler);
 // editBtn.addEventListener("click", editBtnHandler);
 
 
