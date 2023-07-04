@@ -40,6 +40,16 @@ form input{
 }
 
 
+#edit-student-btn{
+  cursor: pointer;
+  display: none;
+}
+
+#add-student-btn{
+  cursor: pointer;
+}
+
+
 
 /* search styling */
 #search-bar{
@@ -58,69 +68,132 @@ form input{
 
 
 
-#student-details {
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-#edit-student-btn{
-  display: none;
-}
+
 
 
 
 /* table styling */
 
+#student-details {
+  /* height: 250px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
 table {
-      width: 54%;
-      height: 221px;
+  display: block;
+  width: 90%;
+  height: 225px;
+  empty-cells: show ;
       border: 0;
+      table-layout: fixed;
       /* if styling breks */
       /* border-collapse: separate; */
       border-collapse: collapse;
       border-spacing: 0 0px;
       border: 1px solid white;
+      
 }
 
-thead tr th {
+ thead tr th {
   border-bottom: 1px solid white;
     border-collapse: separate;
     border-spacing: 5px 5px;
     border-right: 1px solid white;
     width: 11%;
+} 
+
+thead, tbody{
+  display: block;
+}
+
+thead, tbody tr{
+  display: table;
+            width: 100%;
+            table-layout: fixed;
+            
+}
+
+tbody tr{
+  height: 0%;
 }
 
 .table-body-row{
   border-right: 1px solid white;
 }
 
-#edit-btn {
-    width: 31%;
-    height: 15px;
-    background-image: url(./resources/edit.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
+.table-body-btn{
+  display: flex;
+    justify-content: space-around;
 }
+
+#edit-btn {
+  width: 14%;
+  height: 14px;
+  background-image: url(./resources/edit.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
 #trash-btn {
-    width: 31%;
-    height: 15px;
+  width: 11%;
+  height: 14px;
     background-image: url(./resources/trash.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border: none;
-    cursor: pointer;
+    background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 }
+
+/* #table-body tr{
+  height: 2px;
+} */
+
+tbody{
+  overflow-y: auto;
+  height: 204px;
+}
+
+
+/* Hide the scrollbar */
+tbody::-webkit-scrollbar {
+  width: 0.5em; 
+}
+
+tbody::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Adjust the background color as needed */
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background-color: #888; /* Adjust the scrollbar thumb color as needed */
+  border-radius: 4px; /* Adjust the border-radius as needed */
+}
+
+
+/* tbody td:empty {
+  border-right: 1px solid white;
+} */
 
 
 
 tbody tr td {
+  overflow-y: auto;
   vertical-align: top;
   border-collapse: separate;
   border-right: 1px solid white;
+  padding: 9px 6px;
 }

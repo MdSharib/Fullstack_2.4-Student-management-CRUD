@@ -48,7 +48,7 @@ const renderSearch = (filteredData) => {
                 <td>${val["email"]}</td>
                 <td>${val["age"]}</td>
                 <td>${val["gpa"]}</td>
-                <td>${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button onClick="deleteStudentBtnHandler(this)" value=${val['id']} id="trash-btn"></button></td>
+                <td class="table-body-btn">${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button onClick="deleteStudentBtnHandler(this)" value=${val['id']} id="trash-btn"></button></td>
             <tr>
     `
 });
@@ -63,6 +63,8 @@ const editBtnHandler = (btnValue) => {
     // console.log(id);
     addStudentBtn.style.display = 'none';
     editStudentBtn.style.display = "flex";
+    editStudentBtn.style.justifyContent = "center";
+    
     
     studentDetails.forEach((val) => {
         if(val["id"] === id){
@@ -98,7 +100,7 @@ const insertIntoTable = () => {
                 <td>${val["email"]}</td>
                 <td>${val["age"]}</td>
                 <td>${val["gpa"]}</td>
-                <td>${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button onClick="deleteStudentBtnHandler(this)" value=${val['id']} id="trash-btn"></button></td>
+                <td class="table-body-btn">${val["degree"]} <button value=${val['id']} onClick="editBtnHandler(this)" id="edit-btn"></button> <button onClick="deleteStudentBtnHandler(this)" value=${val['id']} id="trash-btn"></button></td>
             <tr>
     `
 });
@@ -145,6 +147,7 @@ function editStudentBtnHandler(ev){
     studentInputDegree.value = "";
     console.log("after editing",studentDetails);
     addStudentBtn.style.display = 'flex';
+    addStudentBtn.style.justifyContent = "center";
     editStudentBtn.style.display = "none";
     row = {};
     insertIntoTable();
