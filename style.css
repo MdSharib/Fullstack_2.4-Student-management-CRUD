@@ -1,0 +1,47 @@
+#student-details {
+  height: 200px; /* Set your desired initial default height here */
+  /* overflow-y: auto; */
+}
+
+table {
+  /* background: pink;  */
+  width: 40%;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0 0px;
+  border: 1px solid black;
+}
+
+thead tr th {
+  border-bottom: 1px solid black;
+  border-collapse: separate;
+  border-spacing: 5px 5px;
+  /* border-left: 1px solid black; */
+  border-right: 1px solid black;
+}
+
+.edit-btn {
+    width: 31%;
+    height: 15px;
+    background-image: url(./resources/edit.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.trash-btn {
+    width: 31%;
+    height: 15px;
+    background-image: url(./resources/trash.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+tbody tr td {
+  border-collapse: separate;
+  border-right: 1px solid black;
+}
