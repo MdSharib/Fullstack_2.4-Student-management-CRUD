@@ -120,7 +120,7 @@ function editStudentBtnHandler(ev){
         return;
     }
     if(row["gpa"] <0 || row["gpa"] > 10){
-        alert("please enter valid gpa!!")
+        alert("please enter valid gpa between 1 and 10!!")
         return;
     }
     
@@ -182,7 +182,7 @@ function formDataHandler(ev){
         return;
     }
     if(studentGpa <0 || studentGpa > 10){
-        alert("please enter valid gpa!!")
+        alert("please enter valid gpa between 1 and 10!!")
         return;
     }
     

@@ -148,12 +148,17 @@ table {
       
 }
 
+thead{
+  font-size: 15px;
+}
+
  thead tr th {
   border-bottom: 1px solid white;
     border-collapse: separate;
     border-spacing: 5px 5px;
     border-right: 1px solid white;
     width: 11%;
+    padding: 12px 0px;
 } 
 
 thead, tbody{
