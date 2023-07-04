@@ -1,6 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #111111;
+  color: white;
+}
+
+#heading{
+  margin: 59px 15px;
+}
+
+#form-section{
+  display: flex;
+    flex-wrap: wrap;
+    margin: 0px 11px;
+}
+
+form{
+  width: 100%;
+}
+
+form input{
+  outline: none;
+  width: 31%;
+  border: 1px solid white;
+  height: 35px;
+  margin: 6px 5px;
+  background-color: #111111;
+  color: white;
+}
+
+#btn input{
+  background-color: #fff;
+  color: black;
+  border: none;
+}
+
+
+
+/* search styling */
+#search-bar{
+  width: 98%;
+  margin: 45px 11px;
+}
+
+#search-bar input{
+  width: 95%;
+    height: 35px;
+    background-color: #111111;
+    color: white;
+    border: 1px solid white;
+}
+
+
+
+
 #student-details {
-  height: 200px; /* Set your desired initial default height here */
-  /* overflow-y: auto; */
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #edit-student-btn{
@@ -12,20 +74,26 @@
 /* table styling */
 
 table {
-  /* background: pink;  */
-  width: 40%;
-  border: 0;
-  border-collapse: separate;
-  border-spacing: 0 0px;
-  border: 1px solid black;
+      width: 54%;
+      height: 221px;
+      border: 0;
+      /* if styling breks */
+      /* border-collapse: separate; */
+      border-collapse: collapse;
+      border-spacing: 0 0px;
+      border: 1px solid white;
 }
 
 thead tr th {
-  border-bottom: 1px solid black;
-  border-collapse: separate;
-  border-spacing: 5px 5px;
-  /* border-left: 1px solid black; */
-  border-right: 1px solid black;
+  border-bottom: 1px solid white;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    border-right: 1px solid white;
+    width: 11%;
+}
+
+.table-body-row{
+  border-right: 1px solid white;
 }
 
 #edit-btn {
@@ -49,7 +117,10 @@ thead tr th {
     cursor: pointer;
 }
 
+
+
 tbody tr td {
+  vertical-align: top;
   border-collapse: separate;
-  border-right: 1px solid black;
+  border-right: 1px solid white;
 }

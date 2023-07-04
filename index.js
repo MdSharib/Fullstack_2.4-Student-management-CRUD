@@ -30,11 +30,16 @@ const searchHandler = (ev) => {
      }
    });
 //    console.log(filteredData);
+  if(filteredData.length === 0){
+    table.innerText = "Nothing Found!"
+    return;
+  }
    renderSearch(filteredData);
 }
 
 const renderSearch = (filteredData) => {
-    let toEnterTable = ""
+    let toEnterTable = "";
+    // table.innerHTML = "";
     filteredData.map((val) => {
     toEnterTable += `
                 <tr>
@@ -84,6 +89,7 @@ const editForm = () => {
 
 const insertIntoTable = () => {
     let toEnterTable = ""
+    // table.innerHTML = "";
     studentDetails.map((val) => {
     toEnterTable += `
                 <tr>
@@ -119,7 +125,7 @@ function editStudentBtnHandler(ev){
     row['name'] = studentInputName.value;
     row['age'] = studentInputAge.value;
     row["email"] = studentInputEmail.value;
-    row["gpa"] = studentInputGpa.value;
+    row["gpa"] = parseFloat(studentInputGpa.value).toFixed(2);
     row["degree"]= studentInputDegree.value;
     // let id = "id" + Math.random().toString(16).slice(2);
 
@@ -166,7 +172,7 @@ function formDataHandler(ev){
     const studentName = studentInputName.value;
     const studentAge = studentInputAge.value;
     const studentEmail = studentInputEmail.value;
-    const studentGpa = studentInputGpa.value;
+    const studentGpa = parseFloat(studentInputGpa.value).toFixed(2);
     const studentDegree = studentInputDegree.value;
     if(studentAge <5 || studentAge > 100){
         alert("please enter valid age!!")
