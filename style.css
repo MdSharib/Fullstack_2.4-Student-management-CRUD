@@ -58,7 +58,7 @@ form input{
 }
 
 #search-bar input{
-  width: 95%;
+  width: 96%;
     height: 35px;
     background-color: #111111;
     color: white;
@@ -89,6 +89,7 @@ table {
   width: 90%;
   height: 225px;
   empty-cells: show ;
+  table-layout: fixed;
       border: 0;
       table-layout: fixed;
       /* if styling breks */
@@ -132,7 +133,7 @@ tbody tr{
 }
 
 #edit-btn {
-  width: 14%;
+  width: 8%;
   height: 14px;
   background-image: url(./resources/edit.png);
   background-size: cover;
@@ -146,7 +147,7 @@ tbody tr{
 }
 
 #trash-btn {
-  width: 11%;
+  width: 6%;
   height: 14px;
     background-image: url(./resources/trash.png);
     background-size: cover;
@@ -196,4 +197,16 @@ tbody tr td {
   border-collapse: separate;
   border-right: 1px solid white;
   padding: 9px 6px;
+}
+
+
+/* Media queries */
+@media screen and (max-width: 767px) {
+  #form-section input{
+    width: 100%;
+  }
+
+  #student-details table{
+    width: 98%;
+  }
 }
