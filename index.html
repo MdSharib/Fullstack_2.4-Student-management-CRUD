@@ -1,53 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Management CRUD</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="heading"><h1>Student Management CRUD</h1></div>
+
     <!-- form section -->
     <div id="form-section">
-        <form action="" id="my-form">
-        <input type="text" name="name" class="gradient" id="name" placeholder="Name" required>
-        <input type="email" name="email" class="gradient" id="email" placeholder="Email" required>
-        <input type="number" name="gpa" class="gradient" id="gpa" placeholder="GPA" step="0.01" required>
-        <input type="number" name="age" class="gradient" id="age" placeholder="Age" required>
-        <input type="text" name="degree" class="gradient" id="degree" placeholder="Degree" required>
+      <form action="" id="my-form">
+        <input
+          type="text"
+          name="name"
+          class="gradient"
+          id="name"
+          placeholder="Name"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          class="gradient"
+          id="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="number"
+          name="gpa"
+          class="gradient"
+          id="gpa"
+          placeholder="GPA"
+          step="0.01"
+          required
+        />
+        <input
+          type="number"
+          name="age"
+          class="gradient"
+          id="age"
+          placeholder="Age"
+          required
+        />
+        <input
+          type="text"
+          name="degree"
+          class="gradient"
+          id="degree"
+          placeholder="Degree"
+          required
+        />
         <div id="btn">
-            <input type="submit" value="Add Student" id="add-student-btn">
-            <input type="submit" value="Edit Student" id="edit-student-btn">
+          <input type="submit" value="Add Student" id="add-student-btn" />
+          <input type="submit" value="Edit Student" id="edit-student-btn" />
         </div>
         <!-- <button type="submit">Add Student</button> -->
-    </form>
+      </form>
     </div>
 
     <!-- search bar -->
     <div id="search-bar">
-        <input type="text" name="search" id="search" placeholder="Search by Name, Email or Degree">
+      <input
+        type="text"
+        name="search"
+        id="search"
+        placeholder="Search by Name, Email or Degree"
+      />
     </div>
 
-<!-- student table details section -->
-    <div id="student-details">
-        <table>
-            <thead id="thead">
-                <tr>
-                    <th>ID</th>
-                    <th>Student Name</th>
-                    <th>Email</th>
-                    <th>Age</th>
-                    <th>GPA</th>
-                    <th>Degree</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                <tr>
-                    <td colspan="6" style="text-align: center;">(Insert Students Details)</td>
-                </tr>
 
-                      <!--<tr>
+    <!-- student table details section -->
+    <div id="student-details">
+      <table>
+        <thead id="thead">
+          <tr>
+            <th>ID</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>GPA</th>
+            <th>Degree</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr>
+            <td colspan="6" style="text-align: center">
+              (Insert Students Details)
+            </td>
+          </tr>
+                    <!--<tr>
                         <td>akc</td>
                         <td>akc</td>
                         <td>akc</td>
@@ -57,12 +101,11 @@
                             <button id="edit-btn"></button> 
                             <button id="trash-btn"></button>
                         </td>
-                    </tr>   -->  
-                                       
-            </tbody>
-        </table>
+                    </tr>   -->
+        </tbody>
+      </table>
     </div>
 
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

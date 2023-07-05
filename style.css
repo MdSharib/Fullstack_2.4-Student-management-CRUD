@@ -1,37 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: #111111;
   color: white;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
 }
 
-#heading{
+#heading {
   margin: 59px 15px;
 }
 
-
-
 /* input from section */
 
-#form-section{
+#form-section {
   display: flex;
-    flex-wrap: wrap;
-    margin: 0px 11px;
+  flex-wrap: wrap;
+  margin: 0px 11px;
 }
 
-form{
+form {
   width: 100%;
 }
 
-form input{
+form input {
   outline: none;
   width: 31%;
   border: 1px solid white;
@@ -41,12 +38,17 @@ form input{
   color: white;
 }
 
-
 /* gradient animation */
 form .gradient:focus {
   outline: none;
   border: 2px solid transparent;
-  background-image: linear-gradient(#111111, #111111), linear-gradient(315deg, rgb(236, 160, 255), rgb(170, 178, 255), rgb(132, 255, 201));
+  background-image: linear-gradient(#111111, #111111),
+    linear-gradient(
+      315deg,
+      rgb(236, 160, 255),
+      rgb(170, 178, 255),
+      rgb(132, 255, 201)
+    );
   background-origin: border-box;
   background-clip: padding-box, border-box;
   animation: bg-hue 2s linear infinite;
@@ -58,47 +60,47 @@ form .gradient:focus {
   }
 }
 
-
-
-
-#btn input{
+#btn input {
   background-color: #fff;
   color: black;
   border: none;
   font-weight: 900;
 }
 
-
-#edit-student-btn{
+#edit-student-btn {
   cursor: pointer;
   display: none;
 }
 
-#add-student-btn{
+#add-student-btn {
   cursor: pointer;
 }
 
-
-
 /* search styling */
-#search-bar{
+#search-bar {
   width: 98%;
   margin: 45px 11px;
 }
 
-#search-bar input{
+#search-bar input {
   width: 96%;
-    height: 35px;
-    background-color: #111111;
-    color: white;
-    border: 1px solid white;
+  height: 35px;
+  background-color: #111111;
+  color: white;
+  border: 1px solid white;
 }
 
 /* gradient animation */
 #search-bar input:focus {
   outline: none;
   border: 2px solid transparent;
-  background-image: linear-gradient(#111111, #111111), linear-gradient(315deg, rgb(236, 160, 255), rgb(170, 178, 255), rgb(132, 255, 201));
+  background-image: linear-gradient(#111111, #111111),
+    linear-gradient(
+      315deg,
+      rgb(236, 160, 255),
+      rgb(170, 178, 255),
+      rgb(132, 255, 201)
+    );
   background-origin: border-box;
   background-clip: padding-box, border-box;
   animation: bg-hue 2s linear infinite;
@@ -109,16 +111,6 @@ form .gradient:focus {
     filter: hue-rotate(360deg);
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* table styling */
 
@@ -127,62 +119,60 @@ form .gradient:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-
 
 table {
   display: block;
   width: 90%;
   height: 225px;
-  empty-cells: show ;
+  empty-cells: show;
   table-layout: fixed;
-      border: 0;
-      table-layout: fixed;
-      /* if styling breks */
-      /* border-collapse: separate; */
-      border-collapse: collapse;
-      border-spacing: 0 0px;
-      border: 1px solid white;
-      font-size: 12px;
-      
+  border: 0;
+  table-layout: fixed;
+  /* if styling breks */
+  /* border-collapse: separate; */
+  border-collapse: collapse;
+  border-spacing: 0 0px;
+  border: 1px solid white;
+  font-size: 12px;
 }
 
-thead{
+thead {
   font-size: 15px;
 }
 
- thead tr th {
+thead tr th {
   border-bottom: 1px solid white;
-    border-collapse: separate;
-    border-spacing: 5px 5px;
-    border-right: 1px solid white;
-    width: 11%;
-    padding: 12px 0px;
-} 
+  border-collapse: separate;
+  border-spacing: 5px 5px;
+  border-right: 1px solid white;
+  width: 11%;
+  padding: 12px 0px;
+}
 
-thead, tbody{
+thead,
+tbody {
   display: block;
 }
 
-thead, tbody tr{
+thead,
+tbody tr {
   display: table;
-            width: 100%;
-            table-layout: fixed;
-            
+  width: 100%;
+  table-layout: fixed;
 }
 
-tbody tr{
+tbody tr {
   height: 0%;
 }
 
-.table-body-row{
+.table-body-row {
   border-right: 1px solid white;
 }
 
-.table-body-btn{
+.table-body-btn {
   display: flex;
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 #edit-btn {
@@ -202,12 +192,12 @@ tbody tr{
 #trash-btn {
   width: 6%;
   height: 14px;
-    background-image: url(./resources/trash.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    background-color: transparent;
+  background-image: url(./resources/trash.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
   padding: 0;
   margin: 0;
   cursor: pointer;
@@ -217,32 +207,28 @@ tbody tr{
   height: 2px;
 } */
 
-tbody{
+tbody {
   overflow-y: auto;
   height: 204px;
 }
 
-
 /* Hide the scrollbar */
 tbody::-webkit-scrollbar {
-  width: 0.5em; 
+  width: 0.5em;
 }
 
 tbody::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Adjust the background color as needed */
+  background-color: #f1f1f1; 
 }
 
 tbody::-webkit-scrollbar-thumb {
-  background-color: #888; /* Adjust the scrollbar thumb color as needed */
-  border-radius: 4px; /* Adjust the border-radius as needed */
+  background-color: #888; 
+  border-radius: 4px; 
 }
-
 
 /* tbody td:empty {
   border-right: 1px solid white;
 } */
-
-
 
 tbody tr td {
   overflow-y: auto;
@@ -254,14 +240,13 @@ tbody tr td {
   word-break: break-all;
 }
 
-
 /* Media queries */
 @media screen and (max-width: 767px) {
-  #form-section input{
+  #form-section input {
     width: 100%;
   }
 
-  #student-details table{
+  #student-details table {
     width: 98%;
   }
 }
